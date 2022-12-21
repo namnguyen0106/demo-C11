@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="output"></p>
+<input type="text" id="name">
+<input type="text" id="price">
+<input type="text" id="des">
+<button onclick="add()">Submit</button>
+</body>
+<script>
+  let productArr = [
+          ["Samsung", 500, "New"]
+  ];
+
+  function display() {
+    let str = "";
+    for (let i = 0; i < productArr.length; i++) {
+      str += "<b>Tên:</b> " + productArr[i][0]
+              + ", <b>Giá:</b> " + productArr[i][1]
+              + ", <b>Mô tả:</b> " + productArr[i][2]
+              + "<button onclick='edit(" + i + ")'>Sửa</button>"
+              + "<button onclick='del(" + i + ")'>Xóa</button>"
+              + "</br>"
+    }
+    document.getElementById("output").innerHTML = str;
+  }
+
+  function add() {
+    let name = document.getElementById("name").value;
+    let price = document.getElementById("price").value;
+    let des = document.getElementById("des").value;
+    let newProd = [name, price, des];
+    productArr.push(newProd);
+    display();
+  }
+
+  function edit(index) {
+    let name = document.getElementById("name").value;
+    let price = document.getElementById("price").value;
+    let des = document.getElementById("des").value;
+    let newProd = [name, price, des];
+    productArr[index] = newProd;
+    display();
+  }
+
+  function del(index) {
+    productArr.splice(index, 1);
+    display();
+  }
+  display();
+</script>
+</html>
