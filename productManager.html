@@ -12,45 +12,50 @@
 <button onclick="add()">Submit</button>
 </body>
 <script>
-  let productArr = [
-          ["Samsung", 500, "New"]
-  ];
+    //tạo mảng đa chiều
+    let productArr = [
+        ["Samsung", 500, "New"]
+    ];
 
-  function display() {
-    let str = "";
-    for (let i = 0; i < productArr.length; i++) {
-      str += "<b>Tên:</b> " + productArr[i][0]
-              + ", <b>Giá:</b> " + productArr[i][1]
-              + ", <b>Mô tả:</b> " + productArr[i][2]
-              + "<button onclick='edit(" + i + ")'>Sửa</button>"
-              + "<button onclick='del(" + i + ")'>Xóa</button>"
-              + "</br>"
+    function display() {
+        let str = "";
+        for (let i = 0; i < productArr.length; i++) {
+            str += "<b>Tên:</b> " + productArr[i][0] //lấy ra phần tử bên trong mảng con
+                + ", <b>Giá:</b> " + productArr[i][1]
+                + ", <b>Mô tả:</b> " + productArr[i][2]
+                + " <button onclick='edit(" + i + ")'>Sửa</button>" //cộng 3 chuỗi để sử dụng được biến i
+                + "<button onclick='del(" + i + ")'>Xóa</button>"
+                + "</br>"
+        }
+        document.getElementById("output").innerHTML = str;
     }
-    document.getElementById("output").innerHTML = str;
-  }
 
-  function add() {
-    let name = document.getElementById("name").value;
-    let price = document.getElementById("price").value;
-    let des = document.getElementById("des").value;
-    let newProd = [name, price, des];
-    productArr.push(newProd);
-    display();
-  }
+    function add() {
+        //lấy thông tin sản phẩm từ view
+        let name = document.getElementById("name").value;
+        let price = document.getElementById("price").value;
+        let des = document.getElementById("des").value;
+        //tạo mảng con lưu thông tin sản phẩm
+        let newProd = [name, price, des];
+        productArr.push(newProd);
+        display();
+    }
 
-  function edit(index) {
-    let name = document.getElementById("name").value;
-    let price = document.getElementById("price").value;
-    let des = document.getElementById("des").value;
-    let newProd = [name, price, des];
-    productArr[index] = newProd;
-    display();
-  }
+    function edit(index) {
+        let name = document.getElementById("name").value;
+        let price = document.getElementById("price").value;
+        let des = document.getElementById("des").value;
+        let newProd = [name, price, des];
+        productArr[index] = newProd;
+        display();
+    }
 
-  function del(index) {
-    productArr.splice(index, 1);
+    function del(index) {
+        //xóa 1 phần tử tính từ vị trí index
+        productArr.splice(index, 1);
+        display();
+    }
+
     display();
-  }
-  display();
 </script>
 </html>
