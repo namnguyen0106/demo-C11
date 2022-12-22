@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  //Khai báo đối tượng
+  // let person = {
+  //   name: "Tuấn",
+  //   age: "22",
+  //   sleep: function () {
+  //     return "Demo OOP"
+  //   }
+  // }
+  // alert(person.name)
+  // alert(person.sleep())
+
+  //Khai báo class
+
+  //ES5
+  // function person(firstName, lastName, age) {
+  //   this.firstName = firstName;
+  //   this.lastName = lastName;
+  //   this.age = age;
+  //   this.changeName = function (name) {
+  //     this.lastName = name;
+  //   }
+  // }
+  //
+  // let myFather = new person("Quốc", "Triệu", 50);
+  // myFather.changeName("Ca");
+  // alert(myFather.firstName + myFather.lastName)
+
+  //ES6
+  // class Person {
+  //   constructor(firstName, lastName, age) {
+  //     this.firstName = firstName;
+  //     this.lastName = lastName;
+  //     this.age = age;
+  //   }
+  //   getFirstName() {
+  //     return this.firstName;
+  //   }
+  //   setFirstName(name) {
+  //     this.firstName = name;
+  //   }
+  // }
+  // let person = new Person("Quốc", "Triệu", 18);
+  // person.setFirstName("Nguyễn")
+  // alert(person.firstName)
+
+
+  // Chuyển bài thực hành ES5 -> ES6
+  class Date {
+    constructor(day, month, year) {
+      this.day = day;
+      this.month = month;
+      this.year = year;
+    }
+
+    getDay() {
+      return this.day;
+    }
+    getMonth() {
+      return this.month;
+    }
+    getYear() {
+      return this.year;
+    }
+    setDay(day) {
+      this.day = day;
+    }
+    setMonth(month) {
+      this.month = month;
+    }
+    setYear(year) {
+      this.year = year;
+    }
+    setDate(day, month, year) {
+      this.day = day;
+      this.month = month;
+      this.year = year;
+    }
+    toString() {
+      return this.day + "/" + this.month + "/" + this.year;
+    }
+  }
+
+  let date = new Date();
+  date.setDay(25);
+  date.setMonth(1);
+  date.setYear(2023);
+  // date.setDate(25, 1, 2023)
+  alert(date.toString());
+</script>
+</html>
