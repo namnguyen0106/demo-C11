@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+  //phương thức trả ra đối tượng
+  class Category { //loại
+    constructor(name, des) {
+      this.name = name;
+      this.des = des;
+    }
+    getName() { //trả ra tên
+      return this.name;
+    }
+  }
+
+  class Product { //sản phẩm
+    constructor(name, category) {
+      this.name = name;
+      this.category = category;
+    }
+    getCategory() { //trả ra loại
+      let cate = new Category(this.category, "Xịn")
+      return cate;
+    }
+  }
+
+  let product = new Product("Iphone10", "Android");
+  alert(product.getCategory().getName())
+
+</script>
+</html>

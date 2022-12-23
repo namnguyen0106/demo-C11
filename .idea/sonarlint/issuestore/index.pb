@@ -4,3 +4,5 @@
 demo2.html,4\d\4d21a1f6a2991d4d9993336e12a66de7fd5ed6d5
 ?
 mouseEvent.html,2\1\21dd4b9708c819224f675c4401b41646b293228b
+9
+	demo.html,6\b\6b710d519bd01bdde82ab0cdcd92d98136b7b77d
